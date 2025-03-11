@@ -1,0 +1,11 @@
+#!/bin/bash
+set -ex
+
+VERSION="2.15.0"
+
+pushd $SWIFT_PM_EXTERNAL_LIBS
+	wget https://github.com/readdle/tensorflow-lite-swift/releases/download/2.15.0/RDTensorFlowLiteC-2.15.0-android.tar.gz
+	tar -xvzf RDTensorFlowLiteC-$VERSION-android.tar.gz
+	cp -r RDTensorFlowLiteC-$VERSION-android/* ./
+	rm -rf RDTensorFlowLiteC-$VERSION-android*
+popd
